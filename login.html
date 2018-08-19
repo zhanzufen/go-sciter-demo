@@ -1,0 +1,185 @@
+﻿<html>
+<head>
+    <title></title>
+    <style>
+
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url(fontawesome-webfont.ttf);
+            font-weight: normal;
+            font-style: normal;
+        }
+        body{
+            width: 100%;
+            height: 100%;
+        }
+        .rootPane {
+            border: 1px solid #ccc;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            background-color: #ffffff;
+            border-radius: 20px;
+            width: 80%;
+            height: 85%;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            vertical-align: middle;
+        }
+
+        .rowPane {
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        .content {
+            width: 100%;
+            height: 280px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: 0;
+            margin-right: 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .align-left {
+            display: inline-block;
+            width: 50%;
+            margin-bottom: 0;
+            margin-top: 5px;
+            text-align: left;
+        }
+
+        .loginInfo {
+            display: inline-block;
+            width: 50%;
+            text-align: left;
+            margin: 10px 0 15px;
+        }
+
+        *, body {
+            font-family: "Microsoft YaHei", "宋体";
+        }
+
+        input[type=text]:focus, [type=password]:focus {
+            outline: 0;
+            border: 1px solid #1bb530;
+            box-shadow: 0px 0px 10px 0px #1bc835;
+            transition: blend(quad-in, 400ms, quad-out)
+        }
+
+        .form-control {
+            width: 50%;
+            padding: 5px 5px 5px 25px;
+            font-size: 15px;
+            color: #000000;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            transition: blend(quad-in, 150ms, quad-out)
+        }
+
+        #login-btn {
+            width: 50%;
+            height: 30px;
+            padding: 5px 15px 5px 15px;
+            border: 1px solid #ccc;
+            border-width: 1px;
+            border-radius: 4px;
+            background: #1bb530;
+            cursor: pointer;
+            font-family: "Microsoft YaHei", monospace;
+            color: white;
+            font-size: 17px;
+            position: relative;
+            left: 8px;
+        }
+
+        #login-btn:hover { /* 鼠标移入按钮范围时改变颜色 */
+            background: #1bc835;
+        }
+
+        #login-btn:active {
+            top: 2px; /**向下偏移2px **/
+        }
+
+        .fa-lock::before {
+            content: "\f023";
+        }
+
+        .fa-user::before {
+            content: "\f007";
+        }
+
+        .input-icon-container .fa {
+            color: rgb(0, 0, 0);
+            position: relative;
+            left: 20px;
+            display: inline-block;
+            font-family: FontAwesome, serif;
+            font-style: normal;
+            font-size: 15px;
+        }
+
+        /*form {
+            flow: row(label, toggle);
+            border-spacing: 0.5em;
+        }*/
+        @import url(toggle.css);
+
+
+    </style>
+    <script type="text/tiscript">
+          $(body).onSizing = function () {
+          view.update();
+}
+    </script>
+</head>
+<body>
+
+
+<div class="rootPane">
+    <div class="content">
+
+        <div class="align-left">
+            <span class="control-label">用户名不能为空</span>
+        </div>
+        <div class="rowPane">
+            <div class="input-icon-container" id="user">
+                <span><i class="fa fa-user"></i></span>
+                <span><input type="text" required="required" class="form-control" id="username" novalue="用户名"></span>
+            </div>
+        </div>
+        <div class="align-left">
+            <span class="control-label">密码不能为空</span>
+        </div>
+        <div class="rowPane">
+
+            <div class="input-icon-container" id="pwd">
+                <span><i class="fa fa-lock"></i></span>
+                <span><input type="password" class="form-control" id="password" novalue="密码"></span>
+            </div>
+        </div>
+
+        <div class="loginInfo">
+            <span for="saveUserInfo">记住登录信息:</span>
+            <toggle id="saveUserInfo" name="switch">
+                <option>关</option>
+                <option>开</option>
+            </toggle>
+        </div>
+
+        <div class="rowPane">
+            <input type="submit" id="login-btn" value="登录"></input>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
